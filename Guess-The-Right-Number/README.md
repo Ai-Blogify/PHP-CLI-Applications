@@ -21,5 +21,5 @@ The script accepts the following options:
 
 You can use these options to customize the range of the number to be guessed in the game. For example, to set the minimum value to 5 and the maximum value to 20, you can run the script with the following command:
 
-```shell
-php guess_the_number.php --min=5 --max=20
+   ```shell
+   php guess_the_number.php --min=5 --max=20
