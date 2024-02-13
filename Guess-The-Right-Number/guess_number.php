@@ -1,25 +1,37 @@
 <?php
 
-$number = rand(1, 10);
 
-echo "Guess a number between 1 and 10: \n";
+echo "Welcome to Guess The Number Game!\n\n";
+
+$option = getopt('', ['min::', 'max::']);
+
+if (isset($option['min']) && isset($option['max'])) {
+    $min = $option['min'];
+    $max = $option['max'];
+} else {
+    $min = 1;
+    $max = 10;
+}
+
+$number = rand($min, $max);
 
 // There are two version of the game here:
 // 1. The user guesses the number in 1 try
 // 2. The user guesses the number in multiple tries
 
-$game = (int)readline("Enter 1 for 1 try or 2 for multiple tries: ");
+$game = (int)readline("At first, Enter 1 for 1 try or 2 for multiple tries: ");
 
+echo "Guess a number between {$min} and {$max}: \n";
 
 echo "\n";
 
 switch ($game) {
     case 1:
-        $guess = (int)readline("What's your guess? : ");
+        $guess = (int)readline("Now, What's your guess? : ");
         guessOneTry($number, $guess);
         break;
     case 2:
-        $guess = (int)readline("What's your guess? : ");
+        $guess = (int)readline("Now, What's your guess? : ");
         guessMultipleTries($number, $guess);
         break;
     default:
