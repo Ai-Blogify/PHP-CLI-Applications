@@ -11,15 +11,15 @@ This is a PHP command-line game called "Guess The Number". It allows the user to
 
    ```shell
    php guess_the_number.php
+   
+## Options
 
-## Features
+The script accepts the following options:
 
-- Two game modes: one try and multiple tries.
-- Customizable minimum and maximum range for the generated number.
-- Interactive user input using the `readline()` function.
-- Feedback on the user's guess (too high or too low).
-- Number of tries displayed at the end of the game.
+- `--min`: Specifies the minimum value for the range of the generated number. If this option is not provided, the default minimum value is 1.
+- `--max`: Specifies the maximum value for the range of the generated number. If this option is not provided, the default maximum value is 10.
 
-## License
+You can use these options to customize the range of the number to be guessed in the game. For example, to set the minimum value to 5 and the maximum value to 20, you can run the script with the following command:
 
-This project is licensed under the [MIT License](LICENSE).
+```shell
+php guess_the_number.php --min=5 --max=20
